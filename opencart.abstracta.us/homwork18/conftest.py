@@ -1,12 +1,12 @@
 import pytest
 from selenium.webdriver import Chrome
-from pages.dashboard import Dashboard
-from pages.product_list_page import ProductListPage
+from .pages.dashboard import Dashboard
+from .pages.product_list_page import ProductListPage
 
 
 @pytest.fixture(scope="session")
 def driver() -> Chrome:
-    driver = Chrome("C:/Users/Asus/Desktop/py_project_test/opencart.abstracta.us/drivers/chromedriver.exe")
+    driver = Chrome('../../drivers/chromedriver.exe')
     driver.get("http://opencart.abstracta.us/")
     yield driver
     driver.quit()
