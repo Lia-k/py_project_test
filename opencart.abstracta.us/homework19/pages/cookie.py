@@ -9,5 +9,4 @@ class Cookie(BasePageCookie):
 
     def get_cookie(self):
         site_cookie = self._driver.get_cookies()
-        # print(site_cookie)
         return site_cookie
