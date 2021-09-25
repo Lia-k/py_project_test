@@ -1,7 +1,7 @@
 import pytest
 from selenium.webdriver import Chrome
-from .pages.cookie import Cookie
-from .pages.local_storage import LocalStorage
+from .pages.base_page import BasePage
+
 
 
 @pytest.fixture(scope="session")
@@ -14,10 +14,5 @@ def driver() -> Chrome:
 
 
 @pytest.fixture
-def cookie(driver):
-    yield Cookie(driver)
-
-
-@pytest.fixture
-def local_storage(driver):
-    yield LocalStorage(driver)
+def base_page(driver):
+    yield BasePage(driver)
